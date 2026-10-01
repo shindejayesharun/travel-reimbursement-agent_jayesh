@@ -1,0 +1,7 @@
+*.pdf
+*.md
+scratch/
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.env
