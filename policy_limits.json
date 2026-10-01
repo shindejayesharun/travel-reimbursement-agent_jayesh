@@ -1,0 +1,109 @@
+{
+  "categories": {
+    "eligible": [
+      {
+        "category": "airfare",
+        "description": "Economy class airfare",
+        "policy_ref": "POL-CAT-01",
+        "requires_receipt": true
+      },
+      {
+        "category": "lodging",
+        "description": "Hotel room charges up to $200/night",
+        "policy_ref": "POL-CAT-01",
+        "limit_ref": "POL-PD-02",
+        "max_per_unit": 200.0,
+        "unit": "night",
+        "requires_receipt": true
+      },
+      {
+        "category": "meals",
+        "description": "Business meals up to $75/day",
+        "policy_ref": "POL-CAT-01",
+        "limit_ref": "POL-PD-01",
+        "max_per_unit": 75.0,
+        "unit": "day",
+        "requires_receipt_above": 25.0
+      },
+      {
+        "category": "transport",
+        "description": "Ground transport (taxi, rental car, parking) up to $50/day",
+        "policy_ref": "POL-CAT-01",
+        "limit_ref": "POL-PD-03",
+        "max_per_unit": 50.0,
+        "unit": "day",
+        "requires_receipt_above": 25.0
+      },
+      {
+        "category": "conference_fees",
+        "description": "Conference registration fees",
+        "policy_ref": "POL-CAT-01",
+        "requires_receipt_above": 25.0
+      }
+    ],
+    "ineligible": [
+      {
+        "keyword": "spa",
+        "reason": "Personal spa/wellness charges",
+        "policy_ref": "POL-CAT-02"
+      },
+      {
+        "keyword": "minibar",
+        "reason": "In-room minibar and alcohol charges",
+        "policy_ref": "POL-CAT-02"
+      },
+      {
+        "keyword": "alcohol",
+        "reason": "Alcohol and liquor charges",
+        "policy_ref": "POL-CAT-02"
+      },
+      {
+        "keyword": "gym",
+        "reason": "Personal fitness charges",
+        "policy_ref": "POL-CAT-02"
+      },
+      {
+        "keyword": "entertainment",
+        "reason": "Personal entertainment and movies",
+        "policy_ref": "POL-CAT-02"
+      },
+      {
+        "keyword": "fine",
+        "reason": "Traffic fines, penalties, late fees",
+        "policy_ref": "POL-CAT-02"
+      },
+      {
+        "keyword": "gift",
+        "reason": "Personal gifts and shopping",
+        "policy_ref": "POL-CAT-02"
+      }
+    ]
+  },
+  "approval_matrix": [
+    {
+      "tier": "Auto-Approve Tier",
+      "policy_ref": "POL-APR-01",
+      "min_amount": 0.0,
+      "max_amount": 500.0,
+      "authority": "Agent Auto-Approval"
+    },
+    {
+      "tier": "Manager Tier",
+      "policy_ref": "POL-APR-02",
+      "min_amount": 500.01,
+      "max_amount": 2000.0,
+      "authority": "Manager Approval"
+    },
+    {
+      "tier": "Director / Manual-Review Tier",
+      "policy_ref": "POL-APR-03",
+      "min_amount": 2000.01,
+      "max_amount": null,
+      "authority": "Director Approval Required"
+    }
+  ],
+  "timeliness": {
+    "policy_ref": "POL-TIME-01",
+    "max_submission_days": 30
+  }
+}
